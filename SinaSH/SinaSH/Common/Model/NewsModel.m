@@ -12,7 +12,7 @@
 
 +(JSONKeyMapper *)keyMapper
 {
-    JSONKeyMapper *mapper = [[JSONKeyMapper alloc] initWithDictionary:@{@"id":@"newsId",@"video_info.url":@"videoUrl"}];
+    JSONKeyMapper *mapper = [[JSONKeyMapper alloc] initWithDictionary:@{@"id":@"newsId",@"video_info.url":@"videoUrl",@"pics.total":@"pictotal"}];
     return mapper;
 }
 

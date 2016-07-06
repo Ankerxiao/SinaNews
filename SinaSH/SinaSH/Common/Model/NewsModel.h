@@ -16,4 +16,5 @@
 @property (nonatomic,copy)NSString *link;
 @property (nonatomic,copy)NSString<Optional> *comment;
 @property (nonatomic,copy)NSString<Optional> *videoUrl;
+@property (nonatomic,copy)NSString<Optional> *pictotal;
 @end
