@@ -34,10 +34,12 @@
 {
     
     _orignArray = @[@{@"news_toutiao":@"头条"},
-                    @{@"news_sports":@"体育"},
                     @{@"news_ent":@"娱乐"},
-                    @{@"news_funny":@"搞笑"}];
-    
+                    @{@"news_sports":@"体育"},
+                    @{@"news_finance":@"财经"},
+                    @{@"news_tech":@"科技"},
+                    @{@"news_funny":@"搞笑"},
+                    @{@"news_auto":@"汽车"}];
     _totalNewsArray = [[NSMutableArray alloc] init];
     
     NSInteger count = [_orignArray count];

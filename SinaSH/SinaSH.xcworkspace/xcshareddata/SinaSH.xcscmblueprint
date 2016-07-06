@@ -1,25 +1,41 @@
 {
   "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "EB5BA3C30B9B4ADACCC2549FDAEE00DEBE69B67E",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "f9133891-252f-40bd-8bc4-565b4180d6f0++1820" : {
+
+    },
     "f9133891-252f-40bd-8bc4-565b4180d6f0" : {
 
     }
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+
+    "f9133891-252f-40bd-8bc4-565b4180d6f0++1820" : 0,
+
     "f9133891-252f-40bd-8bc4-565b4180d6f0" : 0,
     "EB5BA3C30B9B4ADACCC2549FDAEE00DEBE69B67E" : 0
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BF5AB3BF-CE50-407E-9AC2-B04DA5C30959",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+
     "f9133891-252f-40bd-8bc4-565b4180d6f0" : "RespoXcode\/",
     "EB5BA3C30B9B4ADACCC2549FDAEE00DEBE69B67E" : "SinaNews\/"
+
+    "f9133891-252f-40bd-8bc4-565b4180d6f0++1820" : "",
+    "f9133891-252f-40bd-8bc4-565b4180d6f0" : "RespoXcode\/",
+    "EB5BA3C30B9B4ADACCC2549FDAEE00DEBE69B67E" : "localRepository\/"
+
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "SinaSH",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SinaSH\/SinaSH.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
     {
+
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Ankerxiao\/SinaNews",
+
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/Ankerxiao\/SinaNews.git",
+
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "EB5BA3C30B9B4ADACCC2549FDAEE00DEBE69B67E"
     },
@@ -27,6 +43,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/10.11.57.11\/Respo",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "f9133891-252f-40bd-8bc4-565b4180d6f0"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/10.11.57.11\/Respo",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "f9133891-252f-40bd-8bc4-565b4180d6f0++1820"
     }
   ]
 }
