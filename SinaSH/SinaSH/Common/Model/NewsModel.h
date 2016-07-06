@@ -18,4 +18,5 @@
 @property (nonatomic,copy)NSString<Optional> *videoUrl;
 @property (nonatomic,copy)NSString<Optional> *pic;
 @property (nonatomic,copy)NSString<Optional> *pictotal;
+@property (nonatomic,copy)NSString<Optional> *ooo;
 @end
