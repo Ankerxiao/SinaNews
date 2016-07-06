@@ -157,7 +157,7 @@
 
 - (CGFloat)tableViewCellHeightWithSection:(NSInteger)section AndRow:(NSInteger)row
 {
-    return 226;
+    return 243;
 }
 
 
