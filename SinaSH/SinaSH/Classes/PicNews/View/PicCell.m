@@ -27,6 +27,8 @@
     [self.PicV sd_setImageWithURL:[NSURL URLWithString:newsModel.kpic]];
     [self.titleL setText:newsModel.title];
     [self.totoalL setText:[NSString stringWithFormat:@"%@图",newsModel.pictotal]];
+    self.iocnV.image = [UIImage imageNamed:@"feed_cell_commentIcon"];
+    [self.commentL setText:newsModel.comment];
     
 }
 
