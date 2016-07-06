@@ -1,0 +1,19 @@
+//
+//  SinaSH.pch
+//  SinaSH
+//
+//  Created by keane on 16/7/4.
+//  Copyright © 2016年 keane. All rights reserved.
+//
+
+#ifndef SinaSH_pch
+#define SinaSH_pch
+
+#import "UIView+Custom.h"
+#import "BaseViewController.h"
+#import "Const.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* SinaSH_pch */

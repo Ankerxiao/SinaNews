@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "f9133891-252f-40bd-8bc4-565b4180d6f0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "f9133891-252f-40bd-8bc4-565b4180d6f0" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "f9133891-252f-40bd-8bc4-565b4180d6f0" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "BF5AB3BF-CE50-407E-9AC2-B04DA5C30959",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "f9133891-252f-40bd-8bc4-565b4180d6f0" : "RespoXcode\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "SinaSH",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "SinaSH\/SinaSH.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "svn:\/\/10.11.57.11\/Respo",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "f9133891-252f-40bd-8bc4-565b4180d6f0"
+    }
+  ]
+}
