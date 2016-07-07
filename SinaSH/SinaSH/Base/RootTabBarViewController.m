@@ -28,8 +28,6 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-
-
 -(instancetype)init
 {
     self = [super init];
@@ -62,18 +60,28 @@
     UINavigationController *myNav = [[UINavigationController alloc] initWithRootViewController:myCenter];
     
     self.viewControllers = @[homeNav,picNav,videoNav,myNav];
+    self.tabBar.tintColor = [UIColor redColor];
     
 }
 
 
 - (void)initTabBarItems
 {
+    NSArray  * titleArray = @[@"新闻",@"图片",@"视频",@"我的"];
+    NSArray *imageArray = @[@"tabbar_news",@"tabbar_picture",@"tabbar_video",@"tabbar_setting"];
     
     for (int index = 0; index < [self.viewControllers count]; index++) {
         UINavigationController *navTemp = self.viewControllers[index];
         UIViewController *vcTemp = [navTemp.viewControllers firstObject];
         
-        vcTemp.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemRecents+index tag:index];
+        //vcTemp.tabBarItem = [[UITabBarItem alloc] initWithTabBarSystemItem:UITabBarSystemItemRecents+index tag:index];
+        
+        NSString *str = [NSString stringWithFormat:@"%@",imageArray[index]];
+        
+        NSString *hlStr = [NSString stringWithFormat:@"%@_hl",str];
+    
+        
+        vcTemp.tabBarItem = [[UITabBarItem alloc] initWithTitle:titleArray[index] image:[[UIImage imageNamed:str]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal] selectedImage:[[UIImage imageNamed:hlStr]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
     }
     
 }
