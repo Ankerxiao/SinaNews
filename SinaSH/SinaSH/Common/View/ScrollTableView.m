@@ -8,6 +8,7 @@
 
 #import "ScrollTableView.h"
 #import "HomeNewsCell.h"
+#import <UIImageView+WebCache.h>
 
 #define  TABLEVIEW_TAG_BEGIN 100
 #define  CELL_ID @"cellId"
@@ -16,10 +17,20 @@
 @interface ScrollTableView()<UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate>
 @property (nonatomic,assign)NSInteger tabViewCount;
 @property (nonatomic,assign)NSInteger currentPageNum;
+@property (nonatomic,strong)NSMutableArray *advPic;
 @end
 
 @implementation ScrollTableView
 
+//广告位图片数组的懒加载
+- (NSMutableArray *)advPic
+{
+    if(nil == _advPic)
+    {
+        _advPic = [NSMutableArray array];
+    }
+    return _advPic;
+}
 
 -(instancetype)initWithTableViewCount:(NSInteger)count andDelegate:(id<ScrollTableViewDelegate>)delegate
 {
@@ -56,7 +67,7 @@
         tabV.tag = TABLEVIEW_TAG_BEGIN+index;
         tabV.delegate = self;
         tabV.dataSource = self;
-        
+//        tabV.tableHeaderView = [self scrollHeaderView];
         if([self checkDelSelect:@selector(getNibWithTableSection:)]){
             [tabV registerNib:[_delegate getNibWithTableSection:index] forCellReuseIdentifier:[NSString stringWithFormat:@"%@_%ld",CELL_ID,tabV.tag]];
         }else{
@@ -70,11 +81,29 @@
     
 }
 
-
+- (UIScrollView *)scrollHeaderView
+{
+    UIScrollView *scrollV = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, 150)];
+    scrollV.pagingEnabled = YES;
+    NSInteger count = self.advPic.count;
+    for(int i=0;i<count;i++)
+    {
+        UIImageView *imageV = [[UIImageView alloc] initWithFrame:CGRectMake(0+i*SCREEN_WIDTH, 0, SCREEN_WIDTH, 150)];
+        [imageV sd_setImageWithURL:[NSURL URLWithString:self.advPic[i]]];
+        [scrollV addSubview:imageV];
+    }
+    scrollV.contentSize = CGSizeMake(count*SCREEN_WIDTH, 0);
+    scrollV.contentOffset = CGPointMake(0, 0);
+    return scrollV;
+}
 
 -(void)refreshTableViewWithSection:(NSInteger)index
 {
     UITableView *tableT = [_scrollV viewWithTag:index+TABLEVIEW_TAG_BEGIN];
+    if(self.advPic.count != 0)
+    {
+        [self.advPic removeAllObjects];
+    }
     [tableT performSelectorOnMainThread:@selector(reloadData) withObject:nil waitUntilDone:NO];
 }
 
@@ -102,7 +131,6 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    
     if([self checkDelSelect:@selector(tableViewNumberOfRowsInSection:)])
     {
         return [_delegate tableViewNumberOfRowsInSection:tableView.tag-TABLEVIEW_TAG_BEGIN];
@@ -115,8 +143,14 @@
     if([self checkDelSelect:@selector(newsModelWithTableViewSection:andCellRow:)])
     {
         NewsModel *newsModel = [self.delegate newsModelWithTableViewSection:tableView.tag-TABLEVIEW_TAG_BEGIN andCellRow:indexPath.row];
-        
-        
+//        UIImageView *hv = [self headerView:tableView.tag-TABLEVIEW_TAG_BEGIN];
+//        [hv sd_setImageWithURL:[NSURL URLWithString:newsModel.pic]];
+//        tableView.tableHeaderView = hv;
+        if(newsModel.is_focus)
+        {
+            [self.advPic addObject:newsModel.pic];
+            tableView.tableHeaderView = [self scrollHeaderView];
+        }
         HomeNewsCell *cell = [tableView dequeueReusableCellWithIdentifier:[NSString stringWithFormat:@"%@_%ld",CELL_ID,tableView.tag]];
         [cell updateCellData:newsModel];
         return cell;

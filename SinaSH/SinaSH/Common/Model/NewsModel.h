@@ -19,4 +19,5 @@
 @property (nonatomic,copy)NSString<Optional> *pic;
 @property (nonatomic,copy)NSString<Optional> *pictotal;
 @property (nonatomic,copy)NSString<Optional> *ooo;
+@property (nonatomic,copy)NSString<Optional> *is_focus;
 @end
