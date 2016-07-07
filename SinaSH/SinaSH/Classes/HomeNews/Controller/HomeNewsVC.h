@@ -12,4 +12,6 @@
 
 @interface HomeNewsVC : BaseViewController
 
+- (void)loadDataWithIndex:(NSInteger)index;
+
 @end

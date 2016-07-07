@@ -11,8 +11,12 @@
 #import "NewsModel.h"
 #import "ScrollTableView.h"
 #import "NewsDetailVC.h"
+#import <MJRefresh/MJRefresh.h>
 
 @interface HomeNewsVC ()<BtnListScrollerViewDelegate,ScrollTableViewDelegate>
+{
+    NSInteger tableTag;
+}
 @property (nonatomic,strong)NSMutableArray *totalNewsArray;
 @property (nonatomic,strong)ScrollTableView *scrollTableView;
 @property (nonatomic,strong)BtnListScrollerView *btnScroll;
@@ -56,8 +60,9 @@
 
 - (void)loadDataWithIndex:(NSInteger)index
 {
-    
+    tableTag = index;
     NSString *urlStr = [NSString stringWithFormat:@"http://api.sina.cn/sinago/list.json?channel=%@",[[_orignArray[index] allKeys] firstObject]];
+    _scrollTableView.sectionUrl = urlStr;
     [[NetManager shareManager] requestUrl:urlStr WithSuccessBlock:^(id data) {
         NSMutableArray *arrayTemp = [[NSMutableArray alloc] init];
         for (NSDictionary *dic in data[@"data"][@"list"]) {
@@ -67,8 +72,6 @@
         NSLog(@"%@",arrayTemp);
         
         [_totalNewsArray replaceObjectAtIndex:index withObject:arrayTemp];
-        //[_totalNewsArray insertObject:arrayTemp atIndex:index];
-        
         [_scrollTableView refreshTableViewWithSection:index];
         
     } andFailedBlock:^(NSError *error) {
