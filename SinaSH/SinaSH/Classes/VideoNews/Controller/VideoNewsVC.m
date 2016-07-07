@@ -42,10 +42,10 @@
 {
     _playSection = -1;
     _playRow = -1;
-    _oriArray = @[@{@"video_funny":@"搞笑"},
+    _oriArray = @[@{@"video_video":@"精选"},
                   @{@"video_funny":@"搞笑"},
-                  @{@"video_funny":@"搞笑"},
-                  @{@"video_funny":@"搞笑"}
+                  @{@"video_scene":@"现场"},
+                  @{@"video_funny":@"花絮"}
                   ];
     _totalNewsArray = [[NSMutableArray alloc] init];
     
@@ -108,7 +108,9 @@
 - (void)didSelectedBtnWithIndex:(NSInteger)index
 {
     
-    
+    NSLog(@"didSelectedBtnWithIndex %ld",index);
+    [_scrollTableView scrollTableViewListWithSecion:index];
+
 }
 
 
@@ -134,9 +136,13 @@
 
 - (void)loadTableViewDataWithSection:(NSInteger)section
 {
+    
+    [self loadDataWithIndex:section];
 }
 - (void)currentPageNumberChanged:(NSInteger)currentPage
 {
+    
+    [_btnScroll scrollBtnListWithIndex:currentPage];
 }
 - (void)didSelectedTableViewCellWithSection:(NSInteger)section AndRow:(NSInteger)row
 {

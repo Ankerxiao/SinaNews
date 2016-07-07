@@ -44,8 +44,8 @@
     
     _orignArray = @[@{@"hdpic_toutiao":@"图片"},
                     @{@"hdpic_funny":@"趣图"},
-                    @{@"hdpic_funny":@"美图"},
-                    @{@"hdpic_funny":@"故事"}];
+                    @{@"hdpic_pretty":@"美图"},
+                    @{@"hdpic_story":@"故事"}];
     
     _totalNewsArray = [[NSMutableArray alloc] init];
     
