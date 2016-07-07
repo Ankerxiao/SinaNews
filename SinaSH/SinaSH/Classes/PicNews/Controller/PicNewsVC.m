@@ -133,7 +133,7 @@
 //返回指定索引的TableView中Cell的样式
 - (UINib*)getNibWithTableSection:(NSInteger)section
 {
-    return [UINib nibWithNibName:@"PicCell" bundle:nil];
+    return [UINib nibWithNibName:@"PCell" bundle:nil];
 }
 
 //要求代理去获取指定TableView所需的数据
@@ -157,7 +157,7 @@
 
 - (CGFloat)tableViewCellHeightWithSection:(NSInteger)section AndRow:(NSInteger)row
 {
-    return 162;
+    return 243;
 }
 
 

@@ -1,5 +1,5 @@
 //
-//  PicCell.h
+//  PCell.h
 //  SinaSH
 //
 //  Created by Mr Lee on 16/7/6.
@@ -7,15 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "NewsModel.h"
 
-@interface PicCell : UITableViewCell
+@interface PCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *PicV;
 @property (weak, nonatomic) IBOutlet UILabel *titleL;
-@property (weak, nonatomic) IBOutlet UIImageView *iocnV;
+@property (weak, nonatomic) IBOutlet UIImageView *iconV;
+@property (weak, nonatomic) IBOutlet UILabel *picSumL;
 @property (weak, nonatomic) IBOutlet UILabel *commentL;
-@property (weak, nonatomic) IBOutlet UILabel *totoalL;
-
--(void)updateCellData:(NewsModel*)newsModel;
 
 @end
